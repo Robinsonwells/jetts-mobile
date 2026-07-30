@@ -467,27 +467,28 @@ function VideoReel() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap justify-between items-end gap-6 mb-12">
           <FadeUp>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">From the jobsite</div>
+            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">On the road</div>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
-              Boots on <br />
-              <span className="text-muted-foreground">the ground.</span>
+              Home, work, <br />
+              <span className="text-muted-foreground">or roadside.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="max-w-md text-muted-foreground">
-              Real jobsite footage from recent sewer, excavation, and site work across Pierce County.
+              The van comes fully stocked, so your driveway, office lot, or apartment
+              parking space becomes the shop for the afternoon.
             </p>
           </FadeUp>
         </div>
         <motion.div style={{ y }} className="max-w-4xl mx-auto">
           <FadeUp>
             <div className="relative overflow-hidden bg-secondary aspect-[9/16] md:aspect-video">
-              <video
-                src={jobsite1.url}
-                autoPlay
-                muted
-                loop
-                playsInline
+              <img
+                src={vanWorksite}
+                alt="Service van parked beside a customer's car in an office parking lot"
+                loading="lazy"
+                width={1600}
+                height={1000}
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-black/60 backdrop-blur px-3 py-1 text-xs text-white">
