@@ -82,7 +82,7 @@ function IntroReveal({ revealed }: { revealed: boolean }) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xs tracking-[0.4em] text-neutral-500 mb-4"
         >
-          EST. TACOMA · WA
+          MOBILE MECHANIC · TAMPA, FL
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -90,7 +90,7 @@ function IntroReveal({ revealed }: { revealed: boolean }) {
           transition={{ duration: 0.8, delay: 0.35 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl text-neutral-900 leading-[0.9]"
         >
-          SCOTT TEITGE
+          JETTS MOBILE SERVICES
         </motion.h1>
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
@@ -104,7 +104,7 @@ function IntroReveal({ revealed }: { revealed: boolean }) {
           transition={{ duration: 0.5, delay: 0.9 }}
           className="mt-4 text-sm tracking-[0.3em] text-neutral-600"
         >
-          SEWER · EXCAVATION · SITE WORK
+          DIAGNOSTICS · MAINTENANCE · REPAIRS
         </motion.div>
       </div>
     </motion.div>
@@ -121,20 +121,20 @@ function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#top" className="font-display text-lg tracking-tight">
-          SCOTT<span className="text-primary">.</span>TEITGE
+          JETTS<span className="text-primary">.</span>MOBILE
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm">
           <a href="#services" className="hover:text-primary transition">Services</a>
-          <a href="#work" className="hover:text-primary transition">Work</a>
+          <a href="#work" className="hover:text-primary transition">The Work</a>
           <a href="#reviews" className="hover:text-primary transition">Reviews</a>
           <a href="#contact" className="hover:text-primary transition">Contact</a>
         </div>
         <a
-          href="tel:2538831795"
+          href="tel:8135192629"
           className="inline-flex items-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition"
         >
           <Phone className="h-4 w-4" />
-          (253) 883-1795
+          (813) 519-2629
         </a>
       </div>
     </motion.nav>
@@ -150,7 +150,13 @@ function Hero() {
   return (
     <section ref={ref} id="top" className="relative min-h-screen overflow-hidden pt-16">
       <motion.div style={{ y }} className="absolute inset-0">
-        <img src={homeFinished.url} alt="Finished home and site work" className="w-full h-full object-cover" />
+        <img
+          src={jettsHero}
+          alt="Mobile mechanic repairing a car in a customer's driveway"
+          width={1920}
+          height={1280}
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
       </motion.div>
 
@@ -158,20 +164,21 @@ function Hero() {
         <FadeUp delay={1.9}>
           <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur px-4 py-1.5 text-xs tracking-widest text-white uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            Now booking · Pierce County
+            Same-day service · Hillsborough County
           </div>
         </FadeUp>
         <FadeUp delay={2.0}>
           <h1 className="mt-6 font-display text-white text-5xl sm:text-7xl md:text-[7.5rem] leading-[0.88] max-w-5xl">
-            DIRT MOVED.
+            WE COME
             <br />
-            <span className="text-primary">DONE RIGHT.</span>
+            <span className="text-primary">TO YOU.</span>
           </h1>
         </FadeUp>
         <FadeUp delay={2.15}>
           <p className="mt-8 max-w-xl text-lg text-white/80 leading-relaxed">
-            Sewer lines, excavation, foundations, and full site prep across Tacoma
-            and the South Sound. Locally owned. Honestly priced. Built to last.
+            Mobile mechanic bringing honest, reliable auto repair to your driveway.
+            Diagnostics, maintenance, and repairs done on-site across Tampa and
+            Hillsborough County. Skip the shop and save time.
           </p>
         </FadeUp>
         <FadeUp delay={2.3}>
@@ -180,7 +187,7 @@ function Hero() {
               href="#contact"
               className="group inline-flex items-center gap-3 rounded-sm bg-primary px-7 py-4 font-semibold text-primary-foreground hover:bg-primary/90 transition"
             >
-              Get a free estimate
+              Get a free quote
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
             </a>
             <a
@@ -193,9 +200,9 @@ function Hero() {
         </FadeUp>
         <FadeUp delay={2.5}>
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl border-t border-white/20 pt-8">
-            <Stat n="15+" l="Years experience" />
-            <Stat n="200+" l="Sites completed" />
-            <Stat n="24/7" l="Emergency service" />
+            <Stat n="5.0" l="Star rated" />
+            <Stat n="7 days" l="9am – 6pm" />
+            <Stat n="12mo" l="12k-mile warranty" />
             <Stat n="100%" l="Licensed & insured" />
           </div>
         </FadeUp>
