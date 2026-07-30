@@ -409,16 +409,16 @@ function WorkSlideshow() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap justify-between items-end gap-6 mb-12">
           <FadeUp>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">In the dirt</div>
+            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">In the driveway</div>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
               The work. <br />
-              <span className="text-white/50">Underway.</span>
+              <span className="text-white/50">Under way.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="max-w-md text-white/60">
-              Raw jobsite shots — trenching, digging, and pipe going in the ground
-              across Pierce County.
+              Real jobs in progress — A/C, brakes, cooling systems and diagnostics,
+              handled wherever your car is parked.
             </p>
           </FadeUp>
         </div>
@@ -439,13 +439,13 @@ function FinishedSlideshow() {
             <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">The finish</div>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
               Cleaned up. <br />
-              <span className="text-muted-foreground">Handed over.</span>
+              <span className="text-muted-foreground">Keys back.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="max-w-md text-muted-foreground">
-              Finished driveways, landscaping, walls, and turn-key sites — the way
-              we leave every job.
+              Tools packed, workspace swept, and your car back on the road — the way
+              every job ends.
             </p>
           </FadeUp>
         </div>
