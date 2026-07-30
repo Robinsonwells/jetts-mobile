@@ -591,32 +591,41 @@ function About() {
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <FadeUp>
           <div className="relative overflow-hidden">
-            <img src={homeFinished.url} alt="Finished home" className="w-full aspect-[4/3] object-cover" />
+            <img
+              src={handoff}
+              alt="Nigel Jett handing car keys back to a customer in their driveway"
+              loading="lazy"
+              width={1600}
+              height={1000}
+              className="w-full aspect-[4/3] object-cover"
+            />
             <div className="absolute bottom-0 left-0 bg-primary text-primary-foreground p-6">
               <div className="font-display text-3xl">Local.</div>
-              <div className="text-sm">Tacoma-based & owner-operated</div>
+              <div className="text-sm">Tampa-based & owner-operated</div>
             </div>
           </div>
         </FadeUp>
         <FadeUp delay={0.15}>
           <div>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">About Scott</div>
+            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">About Nigel</div>
             <h2 className="font-display text-4xl md:text-5xl leading-[0.95] mb-6">
-              Fifteen years of moving dirt the right way.
+              One mechanic, one standard, every job.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Scott Teitge has been running crews across Pierce County for over
-              a decade, focused on the underground and site work that makes
-              every project possible. From single-family sewer repairs to full
-              lot prep for custom builds, the standard is the same: get in,
-              do it right, leave it clean.
+              I'm Nigel Jett, a skilled and insured mobile mechanic proudly serving
+              Hillsborough County. My mission is to make vehicle care convenient and
+              stress-free by bringing high-quality repairs, maintenance, and
+              diagnostics directly to your home or workplace. Whether it's routine
+              service, complex repairs, or troubleshooting issues others can't solve,
+              you get professional, timely work so you can get back on the road with
+              confidence.
             </p>
             <ul className="space-y-3">
               {[
-                "Fully licensed, bonded & insured in Washington",
-                "Locally owned and operated in Tacoma",
-                "Straight-forward pricing with written estimates",
-                "Modern equipment, experienced operators",
+                "Licensed & fully insured in Florida",
+                "12-month / 12,000-mile warranty on repairs",
+                "Open 9am – 6pm, Monday through Sunday",
+                "Repairs reported to CARFAX for your service history",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
