@@ -1,38 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { Phone, Mail, MapPin, ArrowRight, Star, Check, Wrench, Truck, HardHat, Hammer, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Star, Check, Gauge, Wrench, Snowflake, BatteryCharging, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 
 import { submitEstimateRequest } from "@/lib/estimates.functions";
-import excavator from "@/assets/excavator.jpg.asset.json";
-import sewerInstall from "@/assets/sewer-install.jpg.asset.json";
-import foundation from "@/assets/foundation.jpg.asset.json";
-import waterline from "@/assets/waterline.jpg.asset.json";
-import driveway from "@/assets/driveway.jpg.asset.json";
-import retainingWall from "@/assets/retaining-wall.jpg.asset.json";
-import lotClearing from "@/assets/lot-clearing.jpg.asset.json";
-import sitePrep from "@/assets/site-prep.jpg.asset.json";
-import homeFinished from "@/assets/home-finished.jpg.asset.json";
-import compaction from "@/assets/compaction.jpg.asset.json";
-import landscapedHome from "@/assets/landscaped-home.jpg.asset.json";
-import yanmarExcavator from "@/assets/yanmar-excavator.jpg.asset.json";
-import lawnTruck from "@/assets/lawn-truck.jpg.asset.json";
-import foundationPour from "@/assets/foundation-pour.jpg.asset.json";
-import gravelPad from "@/assets/gravel-pad.jpg.asset.json";
-import lotGraded from "@/assets/lot-graded.jpg.asset.json";
-import jobsite1 from "@/assets/jobsite-1.mp4.asset.json";
-import jobsite2 from "@/assets/jobsite-2.mp4.asset.json";
+import jettsHero from "@/assets/jetts-hero.jpg";
+import acService from "@/assets/ac-service.jpg";
+import diagnostics from "@/assets/diagnostics.jpg";
+import brakes from "@/assets/brakes.jpg";
+import oilChange from "@/assets/oil-change.jpg";
+import electrical from "@/assets/electrical.jpg";
+import radiator from "@/assets/radiator.jpg";
+import handoff from "@/assets/handoff.jpg";
+import vanWorksite from "@/assets/van-worksite.jpg";
+import tuneup from "@/assets/tuneup.jpg";
+import wheels from "@/assets/wheels.jpg";
+import cleanBay from "@/assets/clean-bay.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Scott Teitge | Tacoma Sewer, Excavation & Site Work" },
+      { title: "Jetts Mobile Services | Mobile Mechanic in Tampa, FL" },
       {
         name: "description",
         content:
-          "Scott Teitge — Tacoma's trusted sewer, excavation & site work contractor. Free estimates. Call (253) 883-1795.",
+          "Jetts Mobile Services — licensed & insured mobile mechanic serving Hillsborough County. Repairs in your driveway. Call (813) 519-2629.",
       },
+      { property: "og:title", content: "Jetts Mobile Services | Mobile Mechanic in Tampa, FL" },
+      {
+        property: "og:description",
+        content:
+          "Diagnostics, A/C, brakes and repairs done on-site. Skip the shop and save time. Licensed and insured. Open 9am–6pm, seven days a week.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
