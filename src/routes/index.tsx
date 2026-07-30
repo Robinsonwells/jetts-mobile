@@ -155,9 +155,9 @@ function Hero() {
       <motion.div style={{ y }} className="absolute inset-0">
         <img
           src={jettsHero}
-          alt="Mobile mechanic repairing a car in a customer's driveway"
-          width={1920}
-          height={1280}
+          alt="Jett's Mobile Service trailer parked and open, stocked with tools"
+          width={1600}
+          height={1600}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
@@ -288,20 +288,20 @@ function Services() {
 }
 
 const workSlides = [
-  { src: acService, cap: "A/C system on the gauges" },
-  { src: diagnostics, cap: "Pulling codes at the curb" },
-  { src: brakes, cap: "Brake pads & rotors in the driveway" },
-  { src: radiator, cap: "Radiator replacement" },
-  { src: electrical, cap: "Battery & charging system test" },
-  { src: tuneup, cap: "Coils and plugs, torqued to spec" },
-  { src: oilChange, cap: "Oil and filter service" },
-  { src: wheels, cap: "Wheels torqued, ready to roll" },
+  { src: acService, cap: "A/C recovery machine on the job" },
+  { src: diagnostics, cap: "Electrical testing at the dash" },
+  { src: brakes, cap: "Brake caliper and rotor service" },
+  { src: radiator, cap: "Radiator replacement in the driveway" },
+  { src: electrical, cap: "Engine bay teardown, tools laid out" },
+  { src: tuneup, cap: "Compression test on the coil pack side" },
+  { src: oilChange, cap: "Oil service under the car" },
+  { src: wheels, cap: "Fresh rotors ready to install" },
 ];
 
 const finishedSlides = [
-  { src: handoff, cap: "Keys back, same afternoon" },
-  { src: cleanBay, cap: "Buttoned up and spotless" },
-  { src: jettsTrailer, cap: "The Jett's trailer, parked and open for business" },
+  { src: handoff, cap: "Nigel under the hood, on-site" },
+  { src: cleanBay, cap: "Set up in the driveway, ready to work" },
+  { src: jettsTrailer, cap: "Trailer on site, ramp down" },
   { src: wheels, cap: "Torqued, checked, and rolling" },
 ];
 
@@ -618,7 +618,7 @@ function About() {
           <div className="relative overflow-hidden">
             <img
               src={handoff}
-              alt="Nigel Jett handing car keys back to a customer in their driveway"
+              alt="Nigel Jett working under the hood of a car in a customer's driveway"
               loading="lazy"
               width={1600}
               height={1000}
