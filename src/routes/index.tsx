@@ -650,7 +650,7 @@ function CTA() {
     if (!form.name.trim()) next.name = "Please enter your name.";
     if (!form.phone.trim()) next.phone = "Please enter your phone number.";
     else if (!/^[0-9\s\-\(\)\+\.]{7,}$/.test(form.phone.trim())) next.phone = "Please enter a valid number.";
-    if (!form.message.trim()) next.message = "Tell us a little about the job.";
+    if (!form.message.trim()) next.message = "Tell me a little about the vehicle.";
     setErrors(next);
     return Object.keys(next).length === 0;
   };
@@ -681,7 +681,7 @@ function CTA() {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: `url(${sitePrep.url})`,
+          backgroundImage: `url(${cleanBay})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -689,12 +689,12 @@ function CTA() {
       <div className="relative max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
           <FadeUp>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-6">Free estimates</div>
+            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-6">Free quotes</div>
           </FadeUp>
           <FadeUp delay={0.1}>
             <h2 className="font-display text-5xl md:text-7xl leading-[0.9]">
-              Got a job that needs <br />
-              <span className="text-primary">doing right?</span>
+              Car acting up? <br />
+              <span className="text-primary">I'll come to it.</span>
             </h2>
           </FadeUp>
         </div>
@@ -706,7 +706,7 @@ function CTA() {
               className="bg-background text-foreground p-8 md:p-10 border border-border shadow-2xl"
               noValidate
             >
-              <h3 className="font-display text-2xl mb-6">Request an estimate</h3>
+              <h3 className="font-display text-2xl mb-6">Request a quote</h3>
               <div className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -731,21 +731,21 @@ function CTA() {
                     type="tel"
                     value={form.phone}
                     onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                    placeholder="(253) 555-1234"
+                    placeholder="(813) 555-1234"
                     className="w-full rounded-sm bg-white px-4 py-3 text-foreground placeholder:text-neutral-500 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition"
                   />
                   {errors.phone && <p className="mt-1.5 text-sm text-destructive">{errors.phone}</p>}
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Tell us about your job
+                    Tell me about your vehicle
                   </label>
                   <textarea
                     id="message"
                     rows={4}
                     value={form.message}
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                    placeholder="What needs done? Where is the site? Any timeline?"
+                    placeholder="Year, make, model — what's it doing, and where is it parked?"
                     className="w-full rounded-sm bg-white px-4 py-3 text-foreground placeholder:text-neutral-500 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition resize-none"
                   />
                   {errors.message && <p className="mt-1.5 text-sm text-destructive">{errors.message}</p>}
@@ -755,16 +755,16 @@ function CTA() {
                   disabled={status === "sending"}
                   className="w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground hover:bg-primary/90 transition disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {status === "sending" ? "Sending…" : "Send estimate request"}
+                  {status === "sending" ? "Sending…" : "Send my request"}
                 </button>
                 {status === "sent" && (
                   <p className="text-sm text-center text-green-700 font-medium">
-                    Thanks — your request came through. Scott will be in touch shortly.
+                    Thanks — your request came through. Nigel will be in touch shortly.
                   </p>
                 )}
                 {status === "error" && (
                   <p className="text-sm text-center text-destructive font-medium">
-                    Something went wrong sending that. Please call (253) 883-1795.
+                    Something went wrong sending that. Please call (813) 519-2629.
                   </p>
                 )}
               </div>
@@ -772,34 +772,41 @@ function CTA() {
 
             <div className="space-y-6 lg:pt-10">
               <p className="text-lg text-secondary-foreground leading-relaxed">
-                Prefer to talk it through? Call or email directly. Most estimates are scheduled within 24 hours.
+                Prefer to talk it through? Call or text directly — most jobs are scheduled same or next day.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
                 <a
-                  href="tel:2538831795"
+                  href="tel:8135192629"
                   className="group flex items-center gap-5 bg-primary text-primary-foreground p-6 hover:bg-primary/90 transition"
                 >
                   <Phone className="h-6 w-6 shrink-0" />
                   <div>
                     <div className="text-xs uppercase tracking-widest opacity-90 mb-1">Call</div>
-                    <div className="font-semibold">(253) 883-1795</div>
+                    <div className="font-semibold">(813) 519-2629</div>
                   </div>
                 </a>
                 <a
-                  href="mailto:scottteitge1@gmail.com"
+                  href="mailto:jett.nigel@gmail.com"
                   className="group flex items-center gap-5 bg-black/30 border border-white/40 p-6 hover:bg-black/40 transition"
                 >
                   <Mail className="h-6 w-6 shrink-0 text-primary" />
                   <div>
                     <div className="text-xs uppercase tracking-widest opacity-90 mb-1">Email</div>
-                    <div className="font-semibold text-sm break-all">scottteitge1@gmail.com</div>
+                    <div className="font-semibold text-sm break-all">jett.nigel@gmail.com</div>
                   </div>
                 </a>
                 <div className="flex items-center gap-5 bg-black/30 border border-white/40 p-6">
                   <MapPin className="h-6 w-6 shrink-0 text-primary" />
                   <div>
                     <div className="text-xs uppercase tracking-widest opacity-90 mb-1">Service Area</div>
-                    <div className="font-semibold">Tacoma & Pierce County</div>
+                    <div className="font-semibold">Tampa & Hillsborough County</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-5 bg-black/30 border border-white/40 p-6">
+                  <Clock className="h-6 w-6 shrink-0 text-primary" />
+                  <div>
+                    <div className="text-xs uppercase tracking-widest opacity-90 mb-1">Hours</div>
+                    <div className="font-semibold">9am – 6pm, 7 days a week</div>
                   </div>
                 </div>
               </div>
