@@ -15,6 +15,8 @@ import radiator from "@/assets/radiator.jpg";
 import handoff from "@/assets/handoff.jpg";
 import vanWorksite from "@/assets/van-worksite.jpg";
 import jettsReel from "@/assets/jetts-reel.mp4.asset.json";
+import jettsReel2 from "@/assets/jetts-reel-2.mp4.asset.json";
+import jettsTrailer from "@/assets/jetts-trailer.jpg";
 import tuneup from "@/assets/tuneup.jpg";
 import wheels from "@/assets/wheels.jpg";
 import cleanBay from "@/assets/clean-bay.jpg";
@@ -299,7 +301,7 @@ const workSlides = [
 const finishedSlides = [
   { src: handoff, cap: "Keys back, same afternoon" },
   { src: cleanBay, cap: "Buttoned up and spotless" },
-  { src: vanWorksite, cap: "Serviced right at the office" },
+  { src: jettsTrailer, cap: "The Jett's trailer, parked and open for business" },
   { src: wheels, cap: "Torqued, checked, and rolling" },
 ];
 
