@@ -504,10 +504,10 @@ function VideoReel() {
 }
 
 const steps = [
-  { n: "01", t: "Call or message", d: "Tell us about the job. We'll ask the right questions." },
-  { n: "02", t: "On-site walkthrough", d: "Free visit, honest assessment, clear written estimate." },
-  { n: "03", t: "Scheduled & dug", d: "We show up on time with the right equipment for the job." },
-  { n: "04", t: "Clean handoff", d: "Site left graded, compacted, and ready for the next step." },
+  { n: "01", t: "Call or message", d: "Tell me the car, the symptoms, and where it's parked." },
+  { n: "02", t: "Straight quote", d: "Clear price up front — parts sourced right, no surprise add-ons." },
+  { n: "03", t: "I come to you", d: "Same-day when I can. Home, work, or wherever the car sits." },
+  { n: "04", t: "Fixed & warrantied", d: "Work explained, area cleaned, backed 12 months / 12,000 miles." },
 ];
 
 function Process() {
@@ -516,7 +516,7 @@ function Process() {
       <FadeUp>
         <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">The process</div>
         <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-16 max-w-3xl">
-          Simple, from first call to final grade.
+          Simple, from first call to keys back.
         </h2>
       </FadeUp>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-border pt-12">
@@ -536,19 +536,19 @@ function Process() {
 
 const reviews = [
   {
-    name: "Mark D.",
-    loc: "North Tacoma",
-    text: "Scott replaced our main sewer line in a single day. Clear pricing, no surprises, and the yard looked better than when they showed up.",
+    name: "Raphael Gonzalez",
+    loc: "A/C repair",
+    text: "What a painless process! From initial contact to having my mother's A/C repaired on her car. Pulled up same day and was fast and efficient. Great prices too! The best part is no waiting in an uncomfortable shop or dropping your car off — he came right to the house and got it done.",
   },
   {
-    name: "Jenna R.",
-    loc: "Puyallup",
-    text: "We hired Scott for site prep on our new build. Professional crew, honest timeline, and the grading was dead-on when the framers arrived.",
+    name: "Daisy Audette",
+    loc: "Radiator replacement",
+    text: "Jett's did an amazing job fixing my Mazda's radiator! There was amazing communication and he helped me find the right part for an amazing price. 100% will be calling them for any car issues in the future!",
   },
   {
-    name: "Tom & Lisa H.",
-    loc: "University Place",
-    text: "Excavation for our foundation went smoothly. Scott communicated every step, and the finished job was cleaner than we expected.",
+    name: "Adam Karouani",
+    loc: "General repair",
+    text: "Jett's service is reliable, honest, and knows his stuff. Super convenient that he comes to you, and he always explains things clearly without trying to upsell. Great service, fair prices — highly recommend!",
   },
 ];
 
@@ -557,9 +557,9 @@ function Reviews() {
     <section id="reviews" className="bg-primary text-primary-foreground py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <FadeUp>
-          <div className="text-xs tracking-[0.3em] uppercase mb-4 opacity-80">What clients say</div>
+          <div className="text-xs tracking-[0.3em] uppercase mb-4 opacity-80">What customers say</div>
           <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-16 max-w-3xl">
-            Trusted by neighbors, contractors, and homeowners.
+            Real reviews from real Tampa drivers.
           </h2>
         </FadeUp>
         <div className="grid md:grid-cols-3 gap-6">
