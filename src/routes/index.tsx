@@ -1,38 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { Phone, Mail, MapPin, ArrowRight, Star, Check, Wrench, Truck, HardHat, Hammer, ChevronLeft, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Star, Check, Gauge, Wrench, Snowflake, BatteryCharging, ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 
 import { submitEstimateRequest } from "@/lib/estimates.functions";
-import excavator from "@/assets/excavator.jpg.asset.json";
-import sewerInstall from "@/assets/sewer-install.jpg.asset.json";
-import foundation from "@/assets/foundation.jpg.asset.json";
-import waterline from "@/assets/waterline.jpg.asset.json";
-import driveway from "@/assets/driveway.jpg.asset.json";
-import retainingWall from "@/assets/retaining-wall.jpg.asset.json";
-import lotClearing from "@/assets/lot-clearing.jpg.asset.json";
-import sitePrep from "@/assets/site-prep.jpg.asset.json";
-import homeFinished from "@/assets/home-finished.jpg.asset.json";
-import compaction from "@/assets/compaction.jpg.asset.json";
-import landscapedHome from "@/assets/landscaped-home.jpg.asset.json";
-import yanmarExcavator from "@/assets/yanmar-excavator.jpg.asset.json";
-import lawnTruck from "@/assets/lawn-truck.jpg.asset.json";
-import foundationPour from "@/assets/foundation-pour.jpg.asset.json";
-import gravelPad from "@/assets/gravel-pad.jpg.asset.json";
-import lotGraded from "@/assets/lot-graded.jpg.asset.json";
-import jobsite1 from "@/assets/jobsite-1.mp4.asset.json";
-import jobsite2 from "@/assets/jobsite-2.mp4.asset.json";
+import jettsHero from "@/assets/jetts-hero.jpg";
+import acService from "@/assets/ac-service.jpg";
+import diagnostics from "@/assets/diagnostics.jpg";
+import brakes from "@/assets/brakes.jpg";
+import oilChange from "@/assets/oil-change.jpg";
+import electrical from "@/assets/electrical.jpg";
+import radiator from "@/assets/radiator.jpg";
+import handoff from "@/assets/handoff.jpg";
+import vanWorksite from "@/assets/van-worksite.jpg";
+import tuneup from "@/assets/tuneup.jpg";
+import wheels from "@/assets/wheels.jpg";
+import cleanBay from "@/assets/clean-bay.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Scott Teitge | Tacoma Sewer, Excavation & Site Work" },
+      { title: "Jetts Mobile Services | Mobile Mechanic in Tampa, FL" },
       {
         name: "description",
         content:
-          "Scott Teitge — Tacoma's trusted sewer, excavation & site work contractor. Free estimates. Call (253) 883-1795.",
+          "Jetts Mobile Services — licensed & insured mobile mechanic serving Hillsborough County. Repairs in your driveway. Call (813) 519-2629.",
       },
+      { property: "og:title", content: "Jetts Mobile Services | Mobile Mechanic in Tampa, FL" },
+      {
+        property: "og:description",
+        content:
+          "Diagnostics, A/C, brakes and repairs done on-site. Skip the shop and save time. Licensed and insured. Open 9am–6pm, seven days a week.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -80,7 +82,7 @@ function IntroReveal({ revealed }: { revealed: boolean }) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xs tracking-[0.4em] text-neutral-500 mb-4"
         >
-          EST. TACOMA · WA
+          MOBILE MECHANIC · TAMPA, FL
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -88,7 +90,7 @@ function IntroReveal({ revealed }: { revealed: boolean }) {
           transition={{ duration: 0.8, delay: 0.35 }}
           className="font-display text-5xl md:text-7xl lg:text-8xl text-neutral-900 leading-[0.9]"
         >
-          SCOTT TEITGE
+          JETTS MOBILE SERVICES
         </motion.h1>
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
@@ -102,7 +104,7 @@ function IntroReveal({ revealed }: { revealed: boolean }) {
           transition={{ duration: 0.5, delay: 0.9 }}
           className="mt-4 text-sm tracking-[0.3em] text-neutral-600"
         >
-          SEWER · EXCAVATION · SITE WORK
+          DIAGNOSTICS · MAINTENANCE · REPAIRS
         </motion.div>
       </div>
     </motion.div>
@@ -119,20 +121,20 @@ function Nav() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#top" className="font-display text-lg tracking-tight">
-          SCOTT<span className="text-primary">.</span>TEITGE
+          JETTS<span className="text-primary">.</span>MOBILE
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm">
           <a href="#services" className="hover:text-primary transition">Services</a>
-          <a href="#work" className="hover:text-primary transition">Work</a>
+          <a href="#work" className="hover:text-primary transition">The Work</a>
           <a href="#reviews" className="hover:text-primary transition">Reviews</a>
           <a href="#contact" className="hover:text-primary transition">Contact</a>
         </div>
         <a
-          href="tel:2538831795"
+          href="tel:8135192629"
           className="inline-flex items-center gap-2 rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition"
         >
           <Phone className="h-4 w-4" />
-          (253) 883-1795
+          (813) 519-2629
         </a>
       </div>
     </motion.nav>
@@ -148,7 +150,13 @@ function Hero() {
   return (
     <section ref={ref} id="top" className="relative min-h-screen overflow-hidden pt-16">
       <motion.div style={{ y }} className="absolute inset-0">
-        <img src={homeFinished.url} alt="Finished home and site work" className="w-full h-full object-cover" />
+        <img
+          src={jettsHero}
+          alt="Mobile mechanic repairing a car in a customer's driveway"
+          width={1920}
+          height={1280}
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
       </motion.div>
 
@@ -156,20 +164,21 @@ function Hero() {
         <FadeUp delay={1.9}>
           <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur px-4 py-1.5 text-xs tracking-widest text-white uppercase">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            Now booking · Pierce County
+            Same-day service · Hillsborough County
           </div>
         </FadeUp>
         <FadeUp delay={2.0}>
           <h1 className="mt-6 font-display text-white text-5xl sm:text-7xl md:text-[7.5rem] leading-[0.88] max-w-5xl">
-            DIRT MOVED.
+            WE COME
             <br />
-            <span className="text-primary">DONE RIGHT.</span>
+            <span className="text-primary">TO YOU.</span>
           </h1>
         </FadeUp>
         <FadeUp delay={2.15}>
           <p className="mt-8 max-w-xl text-lg text-white/80 leading-relaxed">
-            Sewer lines, excavation, foundations, and full site prep across Tacoma
-            and the South Sound. Locally owned. Honestly priced. Built to last.
+            Mobile mechanic bringing honest, reliable auto repair to your driveway.
+            Diagnostics, maintenance, and repairs done on-site across Tampa and
+            Hillsborough County. Skip the shop and save time.
           </p>
         </FadeUp>
         <FadeUp delay={2.3}>
@@ -178,7 +187,7 @@ function Hero() {
               href="#contact"
               className="group inline-flex items-center gap-3 rounded-sm bg-primary px-7 py-4 font-semibold text-primary-foreground hover:bg-primary/90 transition"
             >
-              Get a free estimate
+              Get a free quote
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
             </a>
             <a
@@ -191,9 +200,9 @@ function Hero() {
         </FadeUp>
         <FadeUp delay={2.5}>
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl border-t border-white/20 pt-8">
-            <Stat n="15+" l="Years experience" />
-            <Stat n="200+" l="Sites completed" />
-            <Stat n="24/7" l="Emergency service" />
+            <Stat n="5.0" l="Star rated" />
+            <Stat n="7 days" l="9am – 6pm" />
+            <Stat n="12mo" l="12k-mile warranty" />
             <Stat n="100%" l="Licensed & insured" />
           </div>
         </FadeUp>
@@ -212,7 +221,7 @@ function Stat({ n, l }: { n: string; l: string }) {
 }
 
 function Marquee() {
-  const items = ["SEWER REPAIR", "EXCAVATION", "SITE PREP", "FOUNDATIONS", "WATER LINES", "GRADING", "DEMOLITION", "HAULING"];
+  const items = ["A/C SERVICE", "DIAGNOSTICS", "BRAKES", "OIL CHANGES", "BATTERY & ELECTRICAL", "COOLING SYSTEMS", "TUNE-UPS", "PRE-PURCHASE INSPECTIONS"];
   return (
     <div className="bg-secondary text-secondary-foreground py-5 overflow-hidden border-y border-black/20">
       <motion.div
@@ -232,10 +241,10 @@ function Marquee() {
 }
 
 const services = [
-  { icon: Wrench, title: "Sewer & Water Lines", desc: "New installs, repairs, and full replacements. Trenchless options available." },
-  { icon: Truck, title: "Excavation", desc: "From backyard digs to full lot work with modern equipment and clean job sites." },
-  { icon: HardHat, title: "Site Preparation", desc: "Clearing, grading, and compaction to get your build started on solid ground." },
-  { icon: Hammer, title: "Foundations & Footings", desc: "Precise excavation, forming, and prep for slab, stem wall, and full basements." },
+  { icon: Gauge, title: "Diagnostics", desc: "Check engine lights, drivability issues, and problems other shops couldn't solve — scanned and explained on the spot." },
+  { icon: Snowflake, title: "A/C Service & Repair", desc: "Recharge, leak checks, compressor and condenser work. Cold air back in Florida heat, same day." },
+  { icon: Wrench, title: "Repairs & Maintenance", desc: "Brakes, radiators, hubs, belts, tune-ups, oil changes, and scheduled service — done in your driveway." },
+  { icon: BatteryCharging, title: "Battery & Electrical", desc: "Starting, charging, and electrical faults traced properly instead of guessing at parts." },
 ];
 
 function Services() {
@@ -243,16 +252,17 @@ function Services() {
     <section id="services" className="py-24 md:py-32 max-w-7xl mx-auto px-6">
       <div className="grid md:grid-cols-2 gap-12 mb-16">
         <FadeUp>
-          <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">What we do</div>
+          <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">What I do</div>
           <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
-            Heavy equipment. <br />
-            <span className="text-muted-foreground">Careful hands.</span>
+            Full shop service. <br />
+            <span className="text-muted-foreground">No shop required.</span>
           </h2>
         </FadeUp>
         <FadeUp delay={0.15}>
           <p className="text-lg text-muted-foreground leading-relaxed md:mt-8">
-            Every job starts with a walkthrough and a straight answer. No surprise
-            invoices, no cutting corners underground where it counts most.
+            Every job starts with a straight answer and a clear price. Nothing gets
+            upsold, everything gets explained, and the work is backed by a 12-month /
+            12,000-mile warranty.
           </p>
         </FadeUp>
       </div>
@@ -275,24 +285,21 @@ function Services() {
 }
 
 const workSlides = [
-  { src: yanmarExcavator.url, cap: "Yanmar dialed in, ready to dig" },
-  { src: sewerInstall.url, cap: "Sewer line install" },
-  { src: waterline.url, cap: "Water service line" },
-  { src: foundation.url, cap: "Foundation footings" },
-  { src: foundationPour.url, cap: "Foundation & site pour" },
-  { src: lotClearing.url, cap: "Lot clearing" },
-  { src: sitePrep.url, cap: "Site prep & excavation" },
-  { src: compaction.url, cap: "Trench & compaction" },
-  { src: gravelPad.url, cap: "Gravel pad & drainage" },
+  { src: acService, cap: "A/C system on the gauges" },
+  { src: diagnostics, cap: "Pulling codes at the curb" },
+  { src: brakes, cap: "Brake pads & rotors in the driveway" },
+  { src: radiator, cap: "Radiator replacement" },
+  { src: electrical, cap: "Battery & charging system test" },
+  { src: tuneup, cap: "Coils and plugs, torqued to spec" },
+  { src: oilChange, cap: "Oil and filter service" },
+  { src: wheels, cap: "Wheels torqued, ready to roll" },
 ];
 
 const finishedSlides = [
-  { src: landscapedHome.url, cap: "Finished landscape & hardscape" },
-  { src: retainingWall.url, cap: "Curved stone retaining wall" },
-  { src: driveway.url, cap: "Fresh driveway & site finish" },
-  { src: lawnTruck.url, cap: "Manicured lawn, striped clean" },
-  { src: lotGraded.url, cap: "Graded, cleared & ready to build" },
-  { src: homeFinished.url, cap: "Delivered turn-key" },
+  { src: handoff, cap: "Keys back, same afternoon" },
+  { src: cleanBay, cap: "Buttoned up and spotless" },
+  { src: vanWorksite, cap: "Serviced right at the office" },
+  { src: wheels, cap: "Torqued, checked, and rolling" },
 ];
 
 function Slideshow({ slides, tint = "dark" }: { slides: { src: string; cap: string }[]; tint?: "dark" | "light" }) {
@@ -402,16 +409,16 @@ function WorkSlideshow() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap justify-between items-end gap-6 mb-12">
           <FadeUp>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">In the dirt</div>
+            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">In the driveway</div>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
               The work. <br />
-              <span className="text-white/50">Underway.</span>
+              <span className="text-white/50">Under way.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="max-w-md text-white/60">
-              Raw jobsite shots — trenching, digging, and pipe going in the ground
-              across Pierce County.
+              Real jobs in progress — A/C, brakes, cooling systems and diagnostics,
+              handled wherever your car is parked.
             </p>
           </FadeUp>
         </div>
@@ -432,13 +439,13 @@ function FinishedSlideshow() {
             <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">The finish</div>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
               Cleaned up. <br />
-              <span className="text-muted-foreground">Handed over.</span>
+              <span className="text-muted-foreground">Keys back.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="max-w-md text-muted-foreground">
-              Finished driveways, landscaping, walls, and turn-key sites — the way
-              we leave every job.
+              Tools packed, workspace swept, and your car back on the road — the way
+              every job ends.
             </p>
           </FadeUp>
         </div>
@@ -460,27 +467,28 @@ function VideoReel() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap justify-between items-end gap-6 mb-12">
           <FadeUp>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">From the jobsite</div>
+            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">On the road</div>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
-              Boots on <br />
-              <span className="text-muted-foreground">the ground.</span>
+              Home, work, <br />
+              <span className="text-muted-foreground">or roadside.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="max-w-md text-muted-foreground">
-              Real jobsite footage from recent sewer, excavation, and site work across Pierce County.
+              The van comes fully stocked, so your driveway, office lot, or apartment
+              parking space becomes the shop for the afternoon.
             </p>
           </FadeUp>
         </div>
         <motion.div style={{ y }} className="max-w-4xl mx-auto">
           <FadeUp>
             <div className="relative overflow-hidden bg-secondary aspect-[9/16] md:aspect-video">
-              <video
-                src={jobsite1.url}
-                autoPlay
-                muted
-                loop
-                playsInline
+              <img
+                src={vanWorksite}
+                alt="Service van parked beside a customer's car in an office parking lot"
+                loading="lazy"
+                width={1600}
+                height={1000}
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-black/60 backdrop-blur px-3 py-1 text-xs text-white">
@@ -496,10 +504,10 @@ function VideoReel() {
 }
 
 const steps = [
-  { n: "01", t: "Call or message", d: "Tell us about the job. We'll ask the right questions." },
-  { n: "02", t: "On-site walkthrough", d: "Free visit, honest assessment, clear written estimate." },
-  { n: "03", t: "Scheduled & dug", d: "We show up on time with the right equipment for the job." },
-  { n: "04", t: "Clean handoff", d: "Site left graded, compacted, and ready for the next step." },
+  { n: "01", t: "Call or message", d: "Tell me the car, the symptoms, and where it's parked." },
+  { n: "02", t: "Straight quote", d: "Clear price up front — parts sourced right, no surprise add-ons." },
+  { n: "03", t: "I come to you", d: "Same-day when I can. Home, work, or wherever the car sits." },
+  { n: "04", t: "Fixed & warrantied", d: "Work explained, area cleaned, backed 12 months / 12,000 miles." },
 ];
 
 function Process() {
@@ -508,7 +516,7 @@ function Process() {
       <FadeUp>
         <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">The process</div>
         <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-16 max-w-3xl">
-          Simple, from first call to final grade.
+          Simple, from first call to keys back.
         </h2>
       </FadeUp>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-border pt-12">
@@ -528,19 +536,19 @@ function Process() {
 
 const reviews = [
   {
-    name: "Mark D.",
-    loc: "North Tacoma",
-    text: "Scott replaced our main sewer line in a single day. Clear pricing, no surprises, and the yard looked better than when they showed up.",
+    name: "Raphael Gonzalez",
+    loc: "A/C repair",
+    text: "What a painless process! From initial contact to having my mother's A/C repaired on her car. Pulled up same day and was fast and efficient. Great prices too! The best part is no waiting in an uncomfortable shop or dropping your car off — he came right to the house and got it done.",
   },
   {
-    name: "Jenna R.",
-    loc: "Puyallup",
-    text: "We hired Scott for site prep on our new build. Professional crew, honest timeline, and the grading was dead-on when the framers arrived.",
+    name: "Daisy Audette",
+    loc: "Radiator replacement",
+    text: "Jett's did an amazing job fixing my Mazda's radiator! There was amazing communication and he helped me find the right part for an amazing price. 100% will be calling them for any car issues in the future!",
   },
   {
-    name: "Tom & Lisa H.",
-    loc: "University Place",
-    text: "Excavation for our foundation went smoothly. Scott communicated every step, and the finished job was cleaner than we expected.",
+    name: "Adam Karouani",
+    loc: "General repair",
+    text: "Jett's service is reliable, honest, and knows his stuff. Super convenient that he comes to you, and he always explains things clearly without trying to upsell. Great service, fair prices — highly recommend!",
   },
 ];
 
@@ -549,9 +557,9 @@ function Reviews() {
     <section id="reviews" className="bg-primary text-primary-foreground py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <FadeUp>
-          <div className="text-xs tracking-[0.3em] uppercase mb-4 opacity-80">What clients say</div>
+          <div className="text-xs tracking-[0.3em] uppercase mb-4 opacity-80">What customers say</div>
           <h2 className="font-display text-5xl md:text-6xl leading-[0.95] mb-16 max-w-3xl">
-            Trusted by neighbors, contractors, and homeowners.
+            Real reviews from real Tampa drivers.
           </h2>
         </FadeUp>
         <div className="grid md:grid-cols-3 gap-6">
@@ -583,32 +591,41 @@ function About() {
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <FadeUp>
           <div className="relative overflow-hidden">
-            <img src={homeFinished.url} alt="Finished home" className="w-full aspect-[4/3] object-cover" />
+            <img
+              src={handoff}
+              alt="Nigel Jett handing car keys back to a customer in their driveway"
+              loading="lazy"
+              width={1600}
+              height={1000}
+              className="w-full aspect-[4/3] object-cover"
+            />
             <div className="absolute bottom-0 left-0 bg-primary text-primary-foreground p-6">
               <div className="font-display text-3xl">Local.</div>
-              <div className="text-sm">Tacoma-based & owner-operated</div>
+              <div className="text-sm">Tampa-based & owner-operated</div>
             </div>
           </div>
         </FadeUp>
         <FadeUp delay={0.15}>
           <div>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">About Scott</div>
+            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">About Nigel</div>
             <h2 className="font-display text-4xl md:text-5xl leading-[0.95] mb-6">
-              Fifteen years of moving dirt the right way.
+              One mechanic, one standard, every job.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Scott Teitge has been running crews across Pierce County for over
-              a decade, focused on the underground and site work that makes
-              every project possible. From single-family sewer repairs to full
-              lot prep for custom builds, the standard is the same: get in,
-              do it right, leave it clean.
+              I'm Nigel Jett, a skilled and insured mobile mechanic proudly serving
+              Hillsborough County. My mission is to make vehicle care convenient and
+              stress-free by bringing high-quality repairs, maintenance, and
+              diagnostics directly to your home or workplace. Whether it's routine
+              service, complex repairs, or troubleshooting issues others can't solve,
+              you get professional, timely work so you can get back on the road with
+              confidence.
             </p>
             <ul className="space-y-3">
               {[
-                "Fully licensed, bonded & insured in Washington",
-                "Locally owned and operated in Tacoma",
-                "Straight-forward pricing with written estimates",
-                "Modern equipment, experienced operators",
+                "Licensed & fully insured in Florida",
+                "12-month / 12,000-mile warranty on repairs",
+                "Open 9am – 6pm, Monday through Sunday",
+                "Repairs reported to CARFAX for your service history",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -633,7 +650,7 @@ function CTA() {
     if (!form.name.trim()) next.name = "Please enter your name.";
     if (!form.phone.trim()) next.phone = "Please enter your phone number.";
     else if (!/^[0-9\s\-\(\)\+\.]{7,}$/.test(form.phone.trim())) next.phone = "Please enter a valid number.";
-    if (!form.message.trim()) next.message = "Tell us a little about the job.";
+    if (!form.message.trim()) next.message = "Tell me a little about the vehicle.";
     setErrors(next);
     return Object.keys(next).length === 0;
   };
@@ -664,7 +681,7 @@ function CTA() {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: `url(${sitePrep.url})`,
+          backgroundImage: `url(${cleanBay})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -672,12 +689,12 @@ function CTA() {
       <div className="relative max-w-6xl mx-auto px-6">
         <div className="text-center mb-14">
           <FadeUp>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-6">Free estimates</div>
+            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-6">Free quotes</div>
           </FadeUp>
           <FadeUp delay={0.1}>
             <h2 className="font-display text-5xl md:text-7xl leading-[0.9]">
-              Got a job that needs <br />
-              <span className="text-primary">doing right?</span>
+              Car acting up? <br />
+              <span className="text-primary">I'll come to it.</span>
             </h2>
           </FadeUp>
         </div>
@@ -689,7 +706,7 @@ function CTA() {
               className="bg-background text-foreground p-8 md:p-10 border border-border shadow-2xl"
               noValidate
             >
-              <h3 className="font-display text-2xl mb-6">Request an estimate</h3>
+              <h3 className="font-display text-2xl mb-6">Request a quote</h3>
               <div className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -714,21 +731,21 @@ function CTA() {
                     type="tel"
                     value={form.phone}
                     onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                    placeholder="(253) 555-1234"
+                    placeholder="(813) 555-1234"
                     className="w-full rounded-sm bg-white px-4 py-3 text-foreground placeholder:text-neutral-500 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition"
                   />
                   {errors.phone && <p className="mt-1.5 text-sm text-destructive">{errors.phone}</p>}
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Tell us about your job
+                    Tell me about your vehicle
                   </label>
                   <textarea
                     id="message"
                     rows={4}
                     value={form.message}
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                    placeholder="What needs done? Where is the site? Any timeline?"
+                    placeholder="Year, make, model — what's it doing, and where is it parked?"
                     className="w-full rounded-sm bg-white px-4 py-3 text-foreground placeholder:text-neutral-500 border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition resize-none"
                   />
                   {errors.message && <p className="mt-1.5 text-sm text-destructive">{errors.message}</p>}
@@ -738,16 +755,16 @@ function CTA() {
                   disabled={status === "sending"}
                   className="w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground hover:bg-primary/90 transition disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {status === "sending" ? "Sending…" : "Send estimate request"}
+                  {status === "sending" ? "Sending…" : "Send my request"}
                 </button>
                 {status === "sent" && (
                   <p className="text-sm text-center text-green-700 font-medium">
-                    Thanks — your request came through. Scott will be in touch shortly.
+                    Thanks — your request came through. Nigel will be in touch shortly.
                   </p>
                 )}
                 {status === "error" && (
                   <p className="text-sm text-center text-destructive font-medium">
-                    Something went wrong sending that. Please call (253) 883-1795.
+                    Something went wrong sending that. Please call (813) 519-2629.
                   </p>
                 )}
               </div>
@@ -755,34 +772,41 @@ function CTA() {
 
             <div className="space-y-6 lg:pt-10">
               <p className="text-lg text-secondary-foreground leading-relaxed">
-                Prefer to talk it through? Call or email directly. Most estimates are scheduled within 24 hours.
+                Prefer to talk it through? Call or text directly — most jobs are scheduled same or next day.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
                 <a
-                  href="tel:2538831795"
+                  href="tel:8135192629"
                   className="group flex items-center gap-5 bg-primary text-primary-foreground p-6 hover:bg-primary/90 transition"
                 >
                   <Phone className="h-6 w-6 shrink-0" />
                   <div>
                     <div className="text-xs uppercase tracking-widest opacity-90 mb-1">Call</div>
-                    <div className="font-semibold">(253) 883-1795</div>
+                    <div className="font-semibold">(813) 519-2629</div>
                   </div>
                 </a>
                 <a
-                  href="mailto:scottteitge1@gmail.com"
+                  href="mailto:jett.nigel@gmail.com"
                   className="group flex items-center gap-5 bg-black/30 border border-white/40 p-6 hover:bg-black/40 transition"
                 >
                   <Mail className="h-6 w-6 shrink-0 text-primary" />
                   <div>
                     <div className="text-xs uppercase tracking-widest opacity-90 mb-1">Email</div>
-                    <div className="font-semibold text-sm break-all">scottteitge1@gmail.com</div>
+                    <div className="font-semibold text-sm break-all">jett.nigel@gmail.com</div>
                   </div>
                 </a>
                 <div className="flex items-center gap-5 bg-black/30 border border-white/40 p-6">
                   <MapPin className="h-6 w-6 shrink-0 text-primary" />
                   <div>
                     <div className="text-xs uppercase tracking-widest opacity-90 mb-1">Service Area</div>
-                    <div className="font-semibold">Tacoma & Pierce County</div>
+                    <div className="font-semibold">Tampa & Hillsborough County</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-5 bg-black/30 border border-white/40 p-6">
+                  <Clock className="h-6 w-6 shrink-0 text-primary" />
+                  <div>
+                    <div className="text-xs uppercase tracking-widest opacity-90 mb-1">Hours</div>
+                    <div className="font-semibold">9am – 6pm, 7 days a week</div>
                   </div>
                 </div>
               </div>
@@ -799,12 +823,12 @@ function Footer() {
     <footer className="bg-black text-white/70 py-12">
       <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-6">
         <div>
-          <div className="font-display text-white text-xl">SCOTT<span className="text-primary">.</span>TEITGE</div>
-          <div className="text-xs mt-1">Tacoma Sewer, Excavation & Site Work</div>
+          <div className="font-display text-white text-xl">JETTS<span className="text-primary">.</span>MOBILE</div>
+          <div className="text-xs mt-1">Mobile Auto Repair · Tampa & Hillsborough County</div>
         </div>
         <div className="flex flex-wrap items-center gap-6 text-sm">
           <a
-            href="https://www.facebook.com/profile.php?id=61590103243887#"
+            href="https://www.facebook.com/profile.php?id=61577604383758"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 hover:text-primary transition"
@@ -815,7 +839,7 @@ function Footer() {
             Follow us on Facebook
           </a>
           <span className="hidden sm:inline text-white/30">|</span>
-          <span>© {new Date().getFullYear()} Scott Teitge. Licensed & insured in WA.</span>
+          <span>© {new Date().getFullYear()} Jetts Mobile Services. Licensed & insured in FL.</span>
         </div>
       </div>
     </footer>

@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Scott Teitge | Tacoma Sewer, Excavation & Site Work" },
+      { title: "Jetts Mobile Services | Mobile Mechanic in Tampa, FL" },
       {
         name: "description",
         content:
-          "Tacoma's trusted contractor for sewer, excavation, and site work. Licensed, insured, and locally owned. Call (253) 883-1795 for a free estimate.",
+          "Honest, reliable auto repair in your driveway. Diagnostics, maintenance, A/C and repairs on-site across Hillsborough County. Call (813) 519-2629.",
       },
-      { name: "author", content: "Scott Teitge" },
-      { property: "og:title", content: "Scott Teitge | Tacoma Sewer, Excavation & Site Work" },
+      { name: "author", content: "Jetts Mobile Services" },
+      { property: "og:title", content: "Jetts Mobile Services | Mobile Mechanic in Tampa, FL" },
       {
         property: "og:description",
         content:
-          "Sewer repair, excavation, and full site work across Tacoma and Pierce County. Free estimates, honest pricing, quality workmanship.",
+          "Mobile mechanic bringing honest auto repair to your driveway. Licensed & insured. Serving Hillsborough County 9am–6pm, seven days a week.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;800&display=swap",
       },
     ],
   }),
