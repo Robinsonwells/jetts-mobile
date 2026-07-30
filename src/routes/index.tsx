@@ -221,7 +221,7 @@ function Stat({ n, l }: { n: string; l: string }) {
 }
 
 function Marquee() {
-  const items = ["SEWER REPAIR", "EXCAVATION", "SITE PREP", "FOUNDATIONS", "WATER LINES", "GRADING", "DEMOLITION", "HAULING"];
+  const items = ["A/C SERVICE", "DIAGNOSTICS", "BRAKES", "OIL CHANGES", "BATTERY & ELECTRICAL", "COOLING SYSTEMS", "TUNE-UPS", "PRE-PURCHASE INSPECTIONS"];
   return (
     <div className="bg-secondary text-secondary-foreground py-5 overflow-hidden border-y border-black/20">
       <motion.div
@@ -241,10 +241,10 @@ function Marquee() {
 }
 
 const services = [
-  { icon: Wrench, title: "Sewer & Water Lines", desc: "New installs, repairs, and full replacements. Trenchless options available." },
-  { icon: Truck, title: "Excavation", desc: "From backyard digs to full lot work with modern equipment and clean job sites." },
-  { icon: HardHat, title: "Site Preparation", desc: "Clearing, grading, and compaction to get your build started on solid ground." },
-  { icon: Hammer, title: "Foundations & Footings", desc: "Precise excavation, forming, and prep for slab, stem wall, and full basements." },
+  { icon: Gauge, title: "Diagnostics", desc: "Check engine lights, drivability issues, and problems other shops couldn't solve — scanned and explained on the spot." },
+  { icon: Snowflake, title: "A/C Service & Repair", desc: "Recharge, leak checks, compressor and condenser work. Cold air back in Florida heat, same day." },
+  { icon: Wrench, title: "Repairs & Maintenance", desc: "Brakes, radiators, hubs, belts, tune-ups, oil changes, and scheduled service — done in your driveway." },
+  { icon: BatteryCharging, title: "Battery & Electrical", desc: "Starting, charging, and electrical faults traced properly instead of guessing at parts." },
 ];
 
 function Services() {
@@ -252,16 +252,17 @@ function Services() {
     <section id="services" className="py-24 md:py-32 max-w-7xl mx-auto px-6">
       <div className="grid md:grid-cols-2 gap-12 mb-16">
         <FadeUp>
-          <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">What we do</div>
+          <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">What I do</div>
           <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
-            Heavy equipment. <br />
-            <span className="text-muted-foreground">Careful hands.</span>
+            Full shop service. <br />
+            <span className="text-muted-foreground">No shop required.</span>
           </h2>
         </FadeUp>
         <FadeUp delay={0.15}>
           <p className="text-lg text-muted-foreground leading-relaxed md:mt-8">
-            Every job starts with a walkthrough and a straight answer. No surprise
-            invoices, no cutting corners underground where it counts most.
+            Every job starts with a straight answer and a clear price. Nothing gets
+            upsold, everything gets explained, and the work is backed by a 12-month /
+            12,000-mile warranty.
           </p>
         </FadeUp>
       </div>
@@ -284,24 +285,21 @@ function Services() {
 }
 
 const workSlides = [
-  { src: yanmarExcavator.url, cap: "Yanmar dialed in, ready to dig" },
-  { src: sewerInstall.url, cap: "Sewer line install" },
-  { src: waterline.url, cap: "Water service line" },
-  { src: foundation.url, cap: "Foundation footings" },
-  { src: foundationPour.url, cap: "Foundation & site pour" },
-  { src: lotClearing.url, cap: "Lot clearing" },
-  { src: sitePrep.url, cap: "Site prep & excavation" },
-  { src: compaction.url, cap: "Trench & compaction" },
-  { src: gravelPad.url, cap: "Gravel pad & drainage" },
+  { src: acService, cap: "A/C system on the gauges" },
+  { src: diagnostics, cap: "Pulling codes at the curb" },
+  { src: brakes, cap: "Brake pads & rotors in the driveway" },
+  { src: radiator, cap: "Radiator replacement" },
+  { src: electrical, cap: "Battery & charging system test" },
+  { src: tuneup, cap: "Coils and plugs, torqued to spec" },
+  { src: oilChange, cap: "Oil and filter service" },
+  { src: wheels, cap: "Wheels torqued, ready to roll" },
 ];
 
 const finishedSlides = [
-  { src: landscapedHome.url, cap: "Finished landscape & hardscape" },
-  { src: retainingWall.url, cap: "Curved stone retaining wall" },
-  { src: driveway.url, cap: "Fresh driveway & site finish" },
-  { src: lawnTruck.url, cap: "Manicured lawn, striped clean" },
-  { src: lotGraded.url, cap: "Graded, cleared & ready to build" },
-  { src: homeFinished.url, cap: "Delivered turn-key" },
+  { src: handoff, cap: "Keys back, same afternoon" },
+  { src: cleanBay, cap: "Buttoned up and spotless" },
+  { src: vanWorksite, cap: "Serviced right at the office" },
+  { src: wheels, cap: "Torqued, checked, and rolling" },
 ];
 
 function Slideshow({ slides, tint = "dark" }: { slides: { src: string; cap: string }[]; tint?: "dark" | "light" }) {
