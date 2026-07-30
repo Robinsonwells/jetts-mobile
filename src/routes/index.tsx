@@ -823,12 +823,12 @@ function Footer() {
     <footer className="bg-black text-white/70 py-12">
       <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-6">
         <div>
-          <div className="font-display text-white text-xl">SCOTT<span className="text-primary">.</span>TEITGE</div>
-          <div className="text-xs mt-1">Tacoma Sewer, Excavation & Site Work</div>
+          <div className="font-display text-white text-xl">JETTS<span className="text-primary">.</span>MOBILE</div>
+          <div className="text-xs mt-1">Mobile Auto Repair · Tampa & Hillsborough County</div>
         </div>
         <div className="flex flex-wrap items-center gap-6 text-sm">
           <a
-            href="https://www.facebook.com/profile.php?id=61590103243887#"
+            href="https://www.facebook.com/profile.php?id=61577604383758"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 hover:text-primary transition"
@@ -839,7 +839,7 @@ function Footer() {
             Follow us on Facebook
           </a>
           <span className="hidden sm:inline text-white/30">|</span>
-          <span>© {new Date().getFullYear()} Scott Teitge. Licensed & insured in WA.</span>
+          <span>© {new Date().getFullYear()} Jetts Mobile Services. Licensed & insured in FL.</span>
         </div>
       </div>
     </footer>
