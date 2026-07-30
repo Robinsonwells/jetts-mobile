@@ -15,6 +15,8 @@ import radiator from "@/assets/radiator.jpg";
 import handoff from "@/assets/handoff.jpg";
 import vanWorksite from "@/assets/van-worksite.jpg";
 import jettsReel from "@/assets/jetts-reel.mp4.asset.json";
+import jettsReel2 from "@/assets/jetts-reel-2.mp4.asset.json";
+import jettsTrailer from "@/assets/jetts-trailer.jpg";
 import tuneup from "@/assets/tuneup.jpg";
 import wheels from "@/assets/wheels.jpg";
 import cleanBay from "@/assets/clean-bay.jpg";
@@ -299,7 +301,7 @@ const workSlides = [
 const finishedSlides = [
   { src: handoff, cap: "Keys back, same afternoon" },
   { src: cleanBay, cap: "Buttoned up and spotless" },
-  { src: vanWorksite, cap: "Serviced right at the office" },
+  { src: jettsTrailer, cap: "The Jett's trailer, parked and open for business" },
   { src: wheels, cap: "Torqued, checked, and rolling" },
 ];
 
@@ -483,10 +485,11 @@ function VideoReel() {
         </div>
         <motion.div style={{ y }} className="max-w-4xl mx-auto">
           <FadeUp>
-            <div className="relative overflow-hidden bg-secondary aspect-[9/16] max-w-sm mx-auto">
+            <div className="grid gap-4 sm:grid-cols-2 max-w-2xl mx-auto">
+            <div className="relative overflow-hidden bg-secondary aspect-[9/16]">
               <video
                 src={jettsReel.url}
-                poster={vanWorksite}
+                poster={jettsTrailer}
                 autoPlay
                 muted
                 loop
@@ -499,6 +502,24 @@ function VideoReel() {
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 ON SITE
               </div>
+            </div>
+            <div className="relative overflow-hidden bg-secondary aspect-[9/16]">
+              <video
+                src={jettsReel2.url}
+                poster={vanWorksite}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Inside the Jetts Mobile Services trailer on a job"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-black/60 backdrop-blur px-3 py-1 text-xs text-white">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                IN THE TRAILER
+              </div>
+            </div>
             </div>
           </FadeUp>
         </motion.div>
