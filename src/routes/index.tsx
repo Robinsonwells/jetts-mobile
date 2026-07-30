@@ -14,6 +14,7 @@ import electrical from "@/assets/electrical.jpg";
 import radiator from "@/assets/radiator.jpg";
 import handoff from "@/assets/handoff.jpg";
 import vanWorksite from "@/assets/van-worksite.jpg";
+import jettsReel from "@/assets/jetts-reel.mp4.asset.json";
 import tuneup from "@/assets/tuneup.jpg";
 import wheels from "@/assets/wheels.jpg";
 import cleanBay from "@/assets/clean-bay.jpg";
