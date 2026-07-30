@@ -482,13 +482,16 @@ function VideoReel() {
         </div>
         <motion.div style={{ y }} className="max-w-4xl mx-auto">
           <FadeUp>
-            <div className="relative overflow-hidden bg-secondary aspect-[9/16] md:aspect-video">
-              <img
-                src={vanWorksite}
-                alt="Service van parked beside a customer's car in an office parking lot"
-                loading="lazy"
-                width={1600}
-                height={1000}
+            <div className="relative overflow-hidden bg-secondary aspect-[9/16] max-w-sm mx-auto">
+              <video
+                src={jettsReel.url}
+                poster={vanWorksite}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Jetts Mobile Services working on a vehicle on site"
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-black/60 backdrop-blur px-3 py-1 text-xs text-white">
