@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Phone, Mail, MapPin, ArrowRight, Star, Check, Wrench, Truck, HardHat, Hammer, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 
+import { submitEstimateRequest } from "@/lib/estimates.functions";
 import excavator from "@/assets/excavator.jpg.asset.json";
 import sewerInstall from "@/assets/sewer-install.jpg.asset.json";
 import foundation from "@/assets/foundation.jpg.asset.json";
@@ -637,16 +638,25 @@ function CTA() {
     return Object.keys(next).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     setStatus("sending");
-    const body = `Name: ${form.name.trim()}\nPhone: ${form.phone.trim()}\n\nJob details:\n${form.message.trim()}`;
-    const mailto = `mailto:scottteitge1@gmail.com?subject=${encodeURIComponent("New job estimate request")}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setStatus("sent");
-    setForm({ name: "", phone: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
+    try {
+      await submitEstimateRequest({
+        data: {
+          name: form.name.trim(),
+          phone: form.phone.trim(),
+          message: form.message.trim(),
+        },
+      });
+      setStatus("sent");
+      setForm({ name: "", phone: "", message: "" });
+      setTimeout(() => setStatus("idle"), 6000);
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -728,10 +738,17 @@ function CTA() {
                   disabled={status === "sending"}
                   className="w-full rounded-sm bg-primary px-6 py-4 font-semibold text-primary-foreground hover:bg-primary/90 transition disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {status === "sending" ? "Opening email…" : "Send estimate request"}
+                  {status === "sending" ? "Sending…" : "Send estimate request"}
                 </button>
                 {status === "sent" && (
-                  <p className="text-sm text-center text-green-700 font-medium">Thanks — your email app should open with the details.</p>
+                  <p className="text-sm text-center text-green-700 font-medium">
+                    Thanks — your request came through. Scott will be in touch shortly.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-sm text-center text-destructive font-medium">
+                    Something went wrong sending that. Please call (253) 883-1795.
+                  </p>
                 )}
               </div>
             </form>
