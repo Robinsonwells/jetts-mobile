@@ -14,6 +14,7 @@ import oilChange from "@/assets/oil-change.jpg";
 import electrical from "@/assets/electrical.jpg";
 import radiator from "@/assets/radiator.jpg";
 import handoff from "@/assets/handoff.jpg";
+import nigelPortrait from "@/assets/nigel-portrait.jpg";
 import vanWorksite from "@/assets/van-worksite.jpg";
 import jettsReel from "@/assets/jetts-reel.mp4.asset.json";
 import jettsReel2 from "@/assets/jetts-reel-2.mp4.asset.json";
@@ -619,12 +620,12 @@ function About() {
         <FadeUp>
           <div className="relative overflow-hidden">
             <img
-              src={handoff}
-              alt="Nigel Jett working under the hood of a car in a customer's driveway"
+              src={nigelPortrait}
+              alt="Nigel Jett kneeling beside a wheel hub with tools laid out, mid brake job"
               loading="lazy"
-              width={1600}
-              height={1000}
-              className="w-full aspect-[4/3] object-cover"
+              width={382}
+              height={510}
+              className="w-full aspect-[4/5] object-cover object-top"
             />
             <div className="absolute bottom-0 left-0 bg-primary text-primary-foreground p-6">
               <div className="font-display text-3xl">Local.</div>
