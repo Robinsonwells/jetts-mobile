@@ -155,8 +155,8 @@ function Hero() {
       <motion.div style={{ y }} className="absolute inset-0">
         <img
           src={jettsHero}
-          alt="Jett's Mobile Service truck and branded trailer parked under oak trees"
-          width={510}
+          alt="Jett's Mobile Service trailer and truck set up on a job with ramps down"
+          width={680}
           height={510}
           className="w-full h-full object-cover"
         />
