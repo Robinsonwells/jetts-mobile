@@ -473,7 +473,7 @@ function VideoReel() {
             <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">On the road</div>
             <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
               Home, work, <br />
-              <span className="text-muted-foreground">or roadside.</span>
+              <span className="text-muted-foreground">or the trailer.</span>
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
