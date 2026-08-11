@@ -6,6 +6,7 @@ import { AnimatePresence } from "motion/react";
 
 import { submitEstimateRequest } from "@/lib/estimates.functions";
 import jettsHero from "@/assets/jetts-hero.jpg";
+import brakeServiceOnsite from "@/assets/brake-service-onsite.jpg";
 import acService from "@/assets/ac-service.jpg";
 import diagnostics from "@/assets/diagnostics.jpg";
 import brakes from "@/assets/brakes.jpg";
@@ -288,6 +289,7 @@ function Services() {
 }
 
 const workSlides = [
+  { src: brakeServiceOnsite, cap: "Drilled and slotted rotor swap, done on-site" },
   { src: acService, cap: "A/C recovery machine on the job" },
   { src: diagnostics, cap: "Electrical testing at the dash" },
   { src: brakes, cap: "Brake caliper and rotor service" },
